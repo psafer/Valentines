@@ -1,0 +1,197 @@
+:root {
+  --primary-pink: #ff85a1;
+  --dark-pink: #d63384;
+  --bg-color: #ffeef2;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100svh;
+  background-color: var(--bg-color);
+  font-family: -apple-system, system-ui, sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main-container {
+  width: 85%;
+  max-width: 400px;
+  background: white;
+  padding: 25px;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(214, 51, 132, 0.3);
+  z-index: 10;
+  text-align: center;
+  position: relative;
+}
+
+.photo-container {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 15px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 5px solid var(--primary-pink);
+}
+
+.photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  color: var(--dark-pink);
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+}
+
+.buttons-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: center;
+}
+
+button {
+  flex: 1;
+  padding: 18px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-yes {
+  background-color: #4caf50;
+  color: white;
+  box-shadow: 0 4px 0 #388e3c;
+}
+.btn-no {
+  background-color: #f44336;
+  color: white;
+  box-shadow: 0 4px 0 #d32f2f;
+}
+
+/* Chomiki - lekko przeźroczyste z cieniem */
+.floating-hamster {
+  position: fixed;
+  width: 130px;
+  height: auto;
+  z-index: 200;
+  pointer-events: none;
+  opacity: 0.85; /* Lekka przeźroczystość */
+  filter: drop-shadow(0 0 10px white);
+  animation: bounce 1.8s infinite alternate ease-in-out;
+}
+
+#hamster-band {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  z-index: 210;
+  display: none;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 15px white);
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0) rotate(-5deg) scale(1);
+  }
+  to {
+    transform: translateY(-30px) rotate(5deg) scale(1.05);
+  }
+}
+
+#celebration-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffeef2;
+  z-index: 150;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+  pointer-events: none;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 133, 161, 0.25) 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(214, 51, 132, 0.2) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 70% 80%,
+      rgba(255, 0, 0, 0.1) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 30% 75%,
+      rgba(255, 133, 161, 0.18) 0%,
+      transparent 45%
+    );
+  z-index: 1;
+  pointer-events: none;
+}
+
+body::after {
+  content: "❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀ ❤ ❀";
+  position: fixed;
+  top: -20px;
+  left: -50px;
+  width: 120%;
+  height: 120%;
+  font-size: 3rem;
+  opacity: 0.06;
+  transform: rotate(-15deg);
+  z-index: 2;
+  pointer-events: none;
+  animation: floatPattern 18s linear infinite;
+  white-space: pre-wrap;
+}
+
+@keyframes floatPattern {
+  from {
+    transform: translateY(0) rotate(-15deg);
+  }
+  to {
+    transform: translateY(80px) rotate(-15deg);
+  }
+}
+
+#main-container {
+  position: relative;
+  z-index: 10;
+}
